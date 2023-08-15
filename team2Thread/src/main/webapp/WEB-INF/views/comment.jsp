@@ -11,13 +11,46 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script type="text/javascript">
-	
-	
-	
+		
+		
 	$(function(){
 		
 		$(".cno").hide();
 		$(".bno").hide();
+		
+		
+		let count = ${dto.commentcount }
+		let btc = 0;
+			
+		$(".morebtn").click(function(){
+			let cno = $(this).parent(".moreBox").siblings(".cno").text();
+			let btc = 0;
+			let bno = $(this).parent(".moreBox").siblings(".bno").text();
+			//alert(bno);
+			
+			$.ajax({
+				url: "./cmore", 
+				type: "post",
+				data: {bno: bno, btc: btc},
+				dataType: "json",
+				success: function(data){
+					if(data == 0){
+						alert("!c");
+					}
+				},
+				error: function(){
+					alert("에러가 발생했습니다" + error);
+				}
+			});
+			
+			
+		});
+		
+		
+		
+	});
+	
+	$(function(){
 		
 		// 댓글삭제 (로그인여부확인, id일치여부확인)
 		$(".cdel").click(function(){
@@ -165,11 +198,11 @@
 							<button type="button" class="cedit">수정</button>
 							<button type="button" class="cdel">삭제</button>
 						</div>
+						<div class="moreBox">
+							<button type="button" class="morebtn">댓글더보기</button>
+						</div>
 					</div>
 				</c:forEach>
-					<div class="moreBox">
-						<button type="button" class="morebtn">댓글더보기</button>
-					</div>
 			</c:when>
 		</c:choose>
 	</div>

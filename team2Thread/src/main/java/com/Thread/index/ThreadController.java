@@ -6,7 +6,6 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -90,7 +89,7 @@ public class ThreadController {
 		if (result.getCommentcount() > 0) { 
 			List<Map<String, Object>> commentsList = threadService.commentList(bno); 
 			model.addAttribute("commentsList", commentsList);
-			// comment페이지에도 댓글갯수표시
+			// 댓글갯수표시
 			int count = result.getCommentcount();
 			dto.setCommentcount(count);
 		}

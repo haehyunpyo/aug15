@@ -11,16 +11,14 @@
 	<insert id="write" parameterType="threadDTO"> 
 		INSERT INTO ThreadBoard (bcontent, m_no) values (#{bcontent},(select m_no from members where m_id=#{m_id})) 
 	</insert>
-	
 
 	<select id="detail" parameterType="threadDTO" resultType="threadDTO">
 		SELECT * FROM ThreadBoardview WHERE bno=#{bno}
 	</select>
-
-	<insert id="commentsInsert" parameterType="Map">
-		INSERT INTO	ThreadComments(bno, m_no, c_comment)
-		VALUES(#{bno}, (SELECT m_no FROM ThreadMember WHERE m_id=#{mid}), #{comment})
-	</insert>
+	
+	<select id="commentList" parameterType="Integer" resultType="Map">
+		SELECT * FROM ThreadCommentsview WHERE bno=#{bno} LIMIT 0, 2
+	</select>
 	
 	<update id="cdel" parameterType="Map">
 		UPDATE ThreadComments SET c_del=0

@@ -1,7 +1,7 @@
 package com.Thread.index;
 
 public class ThreadDTO {
-	private int bno, blike, m_no, commentcount, c_like, c_del, c_likeon;
+	private int bno, blike, m_no, commentcount, c_like, c_del, c_likeon, btc;
 	private String m_id, bcontent, bdate;
 	
 	public int getBno() {
@@ -63,6 +63,12 @@ public class ThreadDTO {
 	}
 	public void setC_likeon(int c_likeon) {
 		this.c_likeon = c_likeon;
+	}
+	public int getBtc() {
+		return btc;
+	}
+	public void setBtc(int btc) {
+		this.btc = btc;
 	}
 
 	}

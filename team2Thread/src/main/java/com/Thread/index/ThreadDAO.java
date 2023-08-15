@@ -18,13 +18,13 @@ public class ThreadDAO {
 	}
 	
 	public int write(ThreadDTO dto) {
-		return sqlSession.insert("board.write",dto);
+		return sqlSession.insert("thread.write",dto);
 	}
 
 	public ThreadDTO detail(ThreadDTO dto) {
 		return sqlSession.selectOne("thread.detail", dto);
 	}
-
+	
 	public List<Map<String, Object>> commentList(int bno) {
 		return sqlSession.selectList("thread.commentList", bno);
 	}

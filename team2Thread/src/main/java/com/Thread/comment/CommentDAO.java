@@ -1,5 +1,6 @@
 package com.Thread.comment;
 
+import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
@@ -13,8 +14,8 @@ public class CommentDAO {
 	private SqlSession sqlSession;
 
 	public int commentsInsert(Map<String, Object> map) {
-		return sqlSession.insert("thread.commentsInsert", map);
+		return sqlSession.insert("comment.commentsInsert", map);
 	}
-	
+
 	
 }

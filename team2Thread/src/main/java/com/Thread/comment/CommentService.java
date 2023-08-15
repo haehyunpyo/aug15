@@ -1,5 +1,6 @@
 package com.Thread.comment;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,8 @@ public class CommentService {
 	public int commentsInsert(Map<String, Object> map) {
 		return commentDAO.commentsInsert(map);
 	}
+
+	
 	
 
 }
