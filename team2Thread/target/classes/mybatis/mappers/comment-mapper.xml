@@ -2,6 +2,12 @@
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="board">
+
+<mapper namespace="thread">
+
+	<select id="commentList" parameterType="Integer" resultType="Map">
+		SELECT * FROM ThreadCommentsview WHERE bno=#{bno}
+	</select>
+		
 	
 </mapper>

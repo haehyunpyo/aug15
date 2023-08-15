@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="login">
+
+	<select id="login" parameterType="loginDTO"	resultType="loginDTO"> 
+		SELECT m_name, count(*) as 'count' from ThreadMember WHERE
+		m_id=#{m_id} AND m_pw=#{m_pw}
+	</select>
+	
+	<select id="findID" parameterType="loginDTO"
+		resultType="loginDTO"> SELECT m_id, m_name from ThreadMember WHERE m_em= "${m_em
+		}" 
+	</select>
+	
+	<select id="findPW" parameterType="loginDTO"
+		resultType="Integer"> SELECT count(0) from ThreadMember WHERE m_id = #{m_id} AND
+		m_birth=#{m_birth} 
+	</select>
+	
+	<update id="findPW2" parameterType="loginDTO"> UPDATE ThreadMember SET m_pw
+		= #{m_pw} WHERE m_id = #{m_id} AND m_birth=#{m_birth} 
+	</update>
+</mapper>

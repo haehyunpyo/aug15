@@ -4,6 +4,7 @@
   "https://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		
+		<typeAlias type="com.Thread.index.ThreadDTO" alias="threadDTO"/>
+		<typeAlias type="com.Thread.login.LoginDTO" alias="loginDTO"/>	
 	</typeAliases>
 </configuration>

@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+nav ul li {
+	list-style: none;
+	float:left;
+	text-align:center;	
+	margin-right: 100px;
+}
+
+.loginment{
+	float: right;
+}
