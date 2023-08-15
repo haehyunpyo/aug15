@@ -12,21 +12,6 @@
 
 <script type="text/javascript">
 	
-	// 댓글 두개씩 보이게
-/* 	$(function(){
-		
-		//let count = $(this).children(".ccount").text().replace(/[^0-9]/g,'');
-		// 댓글더보기
-		$(".moreBox").click(function(){
-			let count = ${dto.commentcount }
-			let result 
-			alert(count);
-			//let cno = $(this).siblings(".commentBox").children(".cno").text();
-			//let bno = $(this).parent(".cbtns").siblings(".bno").text();
-			
-		});
-		
-	});  */
 	
 	
 	$(function(){
